@@ -22,12 +22,17 @@ export default () => {
         handleAddPhoto();
     }, []);
 
+        //1280
     const handleAddPhoto = () => {
         launchCamera({
             mediaTypes: 'photo',
             maxWidth: 1280,
+            maxHeight:1280
+
         }, (response) => {
             if(!response.didCancel){
+
+                console.log(response);
                 setPhoto(response);
             }
         });
@@ -44,6 +49,7 @@ export default () => {
                 setDescription('');
                 navigation.navigate('FoundAndLostScreen');
             }else{
+                console.log(result);
                 alert(result.error);
             }
         }else{

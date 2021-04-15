@@ -23,8 +23,9 @@ export default () => {
 
     const handleAddPhoto = async () => {
         launchCamera({
-            mediaType: 'photo',
-            maxWidth: 1280
+            mediaTypes: 'photo',
+            maxWidth: 1280,
+            maxHeight:1280
         }, async (response) => {
             if(!response.didCancel) {
                 setLoading(true);
